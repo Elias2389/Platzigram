@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/erivas/.android/build-cache/5e2a22454ef78065f7a87f70d43bb785695c0960/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a9cbdabba632cbf8be001cdbf34110cf42a64015">
+        <dex dex="/Users/erivas/AndroidStudioProjects/platzi-def/platzigram/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d51718208c6ad104cc49f208bc3b636fb388040e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/erivas/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/erivas/AndroidStudioProjects/platzi-def/platzigram/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_2017a1d9f3d1566926255a6a944aeadd2ca70932/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/erivas/AndroidStudioProjects/platzi-def/platzigram/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="74ea64239205800695d4e3b2032b27bd3825c4bb">
+        <dex dex="/Users/erivas/AndroidStudioProjects/platzi-def/platzigram/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c19ca644e52b2a3827056febabc1fe498a35f6cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/erivas/AndroidStudioProjects/platzi-def/platzigram/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c323c36ecc68965c4cfb460f7721113d2b61ed03">
+        <dex dex="/Users/erivas/AndroidStudioProjects/platzi-def/platzigram/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f76b4489ec89c066529c19c3c210b601bde48dea/classes.dex" />
+    </item>
+
+</items>
