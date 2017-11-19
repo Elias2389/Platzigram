@@ -8,6 +8,7 @@
 
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
@@ -17,16 +18,33 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar_profile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:statusBarScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/colorPrimary"
+            >
 
-            <TextView
-                android:id="@+id/username_profile"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/username_card"
-                android:textColor="@android:color/white"
-                android:textSize="30sp"
-                />
+                android:paddingBottom="20dp"
+                android:layout_gravity="center|top"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/username_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/username_card"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    />
+
+            </LinearLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -38,15 +56,42 @@
         </android.support.design.widget.CollapsingToolbarLayout>
         
     </android.support.design.widget.AppBarLayout>
-    
-    <android.support.v4.widget.CircleImageView
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:src="@drawable/image"
         android:layout_gravity="center|top"
         android:layout_marginTop="30dp"
-        
-
+        android:elevation="10dp"
+        app:layout_behavior="com.zoonref.SimpleViewBehavior"
+        app:dependsOn="@+id/appBar_profile"
+        app:dependType="y"
+        app:dependTargetY="-206dp"
+        app:targetX="16dp"
+        app:targetY="-15dp"
+        app:targetWidth="40dp"
+        app:targetHeight="40dp"
+        />
+    <TextView
+        android:id="@+id/username_tollbar_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username_card"
+        android:textSize="18sp"
+        android:elevation="10dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="-100dp"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"
+        android:alpha="0"
+        app:layout_behavior="com.zoonref.SimpleViewBehavior"
+        app:dependsOn="@+id/appBar_profile"
+        app:dependType="y"
+        app:dependTargetY="-250dp"
+        app:targetY="-5dp"
+        app:targetAlpha="1"
         />
 
 
