@@ -1,6 +1,7 @@
 package com.erivas.platzigram;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,16 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ContainerActivity.class);
         startActivity(intent);
     }
+
+    public void goToWebPage(View view){
+        String url = "http://www.platzigram.com";
+        Uri web = Uri.parse(url);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, web);
+        startActivity(intent);
+
+    }
+
 
 
 
