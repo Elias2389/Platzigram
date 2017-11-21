@@ -1,12 +1,16 @@
-package com.erivas.platzigram.view.fragment;
+package com.erivas.platzigram.post.view;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +26,9 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment {
 
+    private static final int REQUEST_CAMERA = 1;
+    private FloatingActionButton fabCamera;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -36,6 +43,8 @@ public class HomeFragment extends Fragment {
         showToolbar("Home",false, view);
         RecyclerView picturesRecycler = (RecyclerView) view.findViewById(R.id.pictureRecycler);
 
+        fabCamera = (FloatingActionButton) view.findViewById(R.id.fabCamera);
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
@@ -45,8 +54,37 @@ public class HomeFragment extends Fragment {
         picturesRecycler.setAdapter(pictureAdapterRecyclerView);
 
 
+        fabCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                takePicture();
+            }
+        });
+
+
         return view;
     }
+
+
+
+    private void takePicture() {
+
+        Intent intenttakePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(intenttakePicture.resolveActivity(getActivity().getPackageManager()) != null){
+            startActivityForResult(intenttakePicture, REQUEST_CAMERA);
+        }
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if(requestCode == REQUEST_CAMERA && resultCode == getActivity().RESULT_OK){
+            Log.d("Home fragment","Camera Ok");
+        }
+
+    }
+
 
     public ArrayList<Picture> buildPictures(){
         ArrayList<Picture> pictures = new ArrayList<>();
