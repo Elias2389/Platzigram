@@ -7,26 +7,8 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="f8f09341f2aff7c5abd6e1be773756b2a67837d4">
+        sha1="430bb029815ca26bdc1c211c5eb7809e9e9e1e70">
         <dex dex="/Users/erivas/Documents/Personal Projects/Android/Platzigram/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_04626904d6850e0bd22b172db85aeedced5798cf/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/erivas/.android/build-cache/4c32363932d8ad2701f939bec936475387ab98eb/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e70a3fed299d84cd868614e11021664d72b8e488">
-        <dex dex="/Users/erivas/Documents/Personal Projects/Android/Platzigram/app/build/intermediates/pre-dexed/debug/classes_d9d83cbcf5659e978c512920537b29f06aee3b6a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/erivas/.android/build-cache/539ac6df26e4d3ef9a99059318c5c9f2b77dc38e/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="72337187bb1a066aa3f679661bde7d8e78a09065">
-        <dex dex="/Users/erivas/Documents/Personal Projects/Android/Platzigram/app/build/intermediates/pre-dexed/debug/classes_a298e7ac29d54ff736866c5481118cc1d59699ea.jar" />
     </item>
     <item
         is-multidex="true"

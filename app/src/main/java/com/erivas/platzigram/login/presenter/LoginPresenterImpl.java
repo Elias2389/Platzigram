@@ -4,9 +4,7 @@ import com.erivas.platzigram.login.interactor.LoginInteractor;
 import com.erivas.platzigram.login.interactor.LoginInteractorImpl;
 import com.erivas.platzigram.login.view.LoginView;
 
-/**
- * Created by erivas on 11/20/17.
- */
+
 
 public class LoginPresenterImpl implements LoginPresenter {
 
@@ -21,15 +19,24 @@ public class LoginPresenterImpl implements LoginPresenter {
     @Override
     public void signIn(String username, String password) {
 
+        loginView.disabledInputs();
+        loginView.showProgressbar();
+        interactor.signIn(username,password);
+
     }
 
     @Override
     public void loginSuccess() {
+        loginView.goHome();
 
+        loginView.hideprogressBar();
     }
 
     @Override
-    public void loginError() {
+    public void loginError(String error) {
 
+        loginView.enabledInputs();
+        loginView.hideprogressBar();
+        loginView.loginError(error);
     }
 }

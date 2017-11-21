@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.erivas.platzigram.R;
+import com.erivas.platzigram.login.presenter.LoginPresenter;
+import com.erivas.platzigram.login.presenter.LoginPresenterImpl;
 import com.erivas.platzigram.view.ContainerActivity;
 import com.erivas.platzigram.view.CreateAccountActivity;
 
@@ -21,6 +24,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     private TextInputEditText username, password;
     private Button login;
     private ProgressBar progressBarLogin;
+    private LoginPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,16 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         password = (TextInputEditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.login);
         progressBarLogin = (ProgressBar) findViewById(R.id.progressBar_login);
+        hideprogressBar();
 
+        presenter = new LoginPresenterImpl(this);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.signIn(username.getText().toString(),password.getText().toString());
+            }
+        });
 
     }
 
@@ -60,7 +73,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
 
     @Override
-    public void loginError() {
+    public void loginError(String error) {
+
+        Toast.makeText(this, "Ocurrio un error", Toast.LENGTH_SHORT).show();
 
     }
 

@@ -85,7 +85,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/text_login"
                 android:theme="@style/RaiseButtonDark"
-                android:onClick="goHome"
                 />
 
             <RelativeLayout
@@ -111,7 +110,6 @@
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/textsize_dont_have_account"
                     android:layout_toRightOf="@+id/dontHaveAccount"
-                    android:onClick="goCreateAccount"
 
                     />
 
