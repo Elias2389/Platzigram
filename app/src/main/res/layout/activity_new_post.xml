@@ -7,5 +7,63 @@
     android:fitsSystemWindows="true"
     tools:context="com.erivas.platzigram.post.view.NewPostActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:scaleType="centerCrop"
+            android:background="@color/background_text_card"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:theme="@style/EditTextBlack"
+            android:layout_marginTop="@dimen/edit_text_margin_create_account"
+            >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edtTitle"
+            android:hint="@string/hint_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:theme="@style/EditTextBlack"
+            android:layout_marginTop="@dimen/edit_text_margin_create_account"
+            >
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtDescription"
+                android:hint="@string/hint_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/createPost"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/createPost"
+            android:theme="@style/RaiseButtonDark" />
+
+
+    </LinearLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

@@ -3,6 +3,7 @@ package com.erivas.platzigram.post.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -19,7 +20,11 @@ import com.erivas.platzigram.R;
 import com.erivas.platzigram.adapter.PictureAdapterRecyclerView;
 import com.erivas.platzigram.model.Picture;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +33,7 @@ public class HomeFragment extends Fragment {
 
     private static final int REQUEST_CAMERA = 1;
     private FloatingActionButton fabCamera;
+    private String photoPathTemp = "";
 
 
     public HomeFragment() {
@@ -60,19 +66,50 @@ public class HomeFragment extends Fragment {
                 takePicture();
             }
         });
-
-
         return view;
     }
 
 
 
     private void takePicture() {
+        Intent intentTakePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(intentTakePicture.resolveActivity(getActivity().getPackageManager()) != null){
 
-        Intent intenttakePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(intenttakePicture.resolveActivity(getActivity().getPackageManager()) != null){
-            startActivityForResult(intenttakePicture, REQUEST_CAMERA);
+            File photoFile = null;
+
+            try{
+
+                photoFile = createImageFile();
+
+            }
+            catch (Exception error){
+                error.printStackTrace();
+            }
+
+            if(photoFile != null){
+
+                
+
+            }
+
+
+
+            startActivityForResult(intentTakePicture, REQUEST_CAMERA);
         }
+    }
+
+    private File createImageFile() throws IOException {
+
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HH-mm-ss").format(new Date());
+        String imageFileName = "JPEG" + timeStamp + "_";
+        File storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+
+        File photo = File.createTempFile(imageFileName,".jpg", storageDir );
+
+        photoPathTemp = "file:" + photo.getAbsolutePath();
+
+
+        return photo;
     }
 
 

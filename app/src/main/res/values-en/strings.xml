@@ -18,4 +18,6 @@
     <string name="tab_search">Search</string>
     <string name="tab_home">Home</string>
     <string name="tab_profile">Me</string>
+    <string name="hint_title">Titulo</string>
+    <string name="createPost">Crear post</string>
 </resources>
