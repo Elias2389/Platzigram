@@ -6,26 +6,28 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.erivas.platzigram.R;
+import com.squareup.picasso.Picasso;
 
 public class NewPostActivity extends AppCompatActivity {
+
+    private ImageView imgPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_post);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        imgPhoto = (ImageView) findViewById(R.id.img_photo);
+
+        if(getIntent().getExtras() != null){
+            String photoPath = getIntent().getExtras().getString("PHOTP_PATH_TEMP");
+            Picasso.with(this).load(photoPath).into(imgPhoto);
+        }
+
+
     }
 
 }

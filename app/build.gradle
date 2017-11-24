@@ -35,4 +35,6 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.zoonref:simple-view-behavior:1.0'
+
 }
+apply plugin: 'com.google.gms.google-services'

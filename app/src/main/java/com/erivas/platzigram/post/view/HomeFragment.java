@@ -2,11 +2,13 @@ package com.erivas.platzigram.post.view;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -87,14 +89,15 @@ public class HomeFragment extends Fragment {
             }
 
             if(photoFile != null){
-
-                
+                Uri photoUrl = FileProvider.getUriForFile(getActivity(),"com.erivas.platzigram", photoFile);
+                intentTakePicture.putExtra(MediaStore.EXTRA_OUTPUT,photoUrl);
+                startActivityForResult(intentTakePicture, REQUEST_CAMERA);
 
             }
 
 
 
-            startActivityForResult(intentTakePicture, REQUEST_CAMERA);
+
         }
     }
 
@@ -118,6 +121,9 @@ public class HomeFragment extends Fragment {
 
         if(requestCode == REQUEST_CAMERA && resultCode == getActivity().RESULT_OK){
             Log.d("Home fragment","Camera Ok");
+            Intent i = new Intent(getActivity(),NewPostActivity.class);
+            i.putExtra("PHOTP_PATH_TEMP", photoPathTemp);
+            startActivity(i);
         }
 
     }
