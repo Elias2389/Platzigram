@@ -1,5 +1,7 @@
 package com.erivas.platzigram.login.view;
 
+import android.view.View;
+
 /**
  * Created by erivas on 11/20/17.
  */
@@ -13,7 +15,7 @@ public interface LoginView {
 
     void loginError(String error);
 
-    void goCreateAccount();
+    void goCreateAccount(View view);
     void goHome();
     void goToWebPage();
 

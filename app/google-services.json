@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "297727677553-ol71j81tsf7an09f6e5gb2m5fsueflf5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.erivas.platzigram",
+            "certificate_hash": "82d7b2231bef87d78e49dfa9d1dfe6abe4a102de"
+          }
+        },
+        {
           "client_id": "297727677553-etj1onvhelo01e5rkglnkqrjlgq3hbl0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

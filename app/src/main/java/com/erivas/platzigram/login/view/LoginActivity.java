@@ -8,16 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.erivas.platzigram.R;
 import com.erivas.platzigram.login.presenter.LoginPresenter;
 import com.erivas.platzigram.login.presenter.LoginPresenterImpl;
 import com.erivas.platzigram.view.ContainerActivity;
-import com.erivas.platzigram.view.CreateAccountActivity;
-
-import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity implements LoginView{
 
@@ -80,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     }
 
     @Override
-    public void goCreateAccount() {
+    public void goCreateAccount(View view) {
         Intent intent = new Intent(this, CreateAccountActivity.class);
         startActivity(intent);
     }
@@ -97,6 +93,11 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
         Uri web = Uri.parse(url);
 
         Intent intent = new Intent(Intent.ACTION_VIEW, web);
+        startActivity(intent);
+    }
+
+    private void goCreateAccountIntent(View view) {
+        Intent intent = new Intent(this, CreateAccountActivity.class);
         startActivity(intent);
     }
 }
