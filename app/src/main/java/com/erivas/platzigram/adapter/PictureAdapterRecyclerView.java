@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.erivas.platzigram.R;
-import com.erivas.platzigram.view.PictureDetailActivity;
+import com.erivas.platzigram.post.view.PictureDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

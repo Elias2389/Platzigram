@@ -20,4 +20,6 @@
     <string name="tab_profile">Me</string>
     <string name="hint_title">Titulo</string>
     <string name="createPost">Crear post</string>
+    <string name="menu_sign_out">Cerrar sesión</string>
+    <string name="menu_about">Acerca de</string>
 </resources>
